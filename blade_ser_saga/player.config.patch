@@ -1,0 +1,17 @@
+[
+{
+"op" : "add",
+"path":"/defaultBlueprints/tier1/-",
+"value":{"item":"selevasword"}
+},
+{
+"op" : "add",
+"path":"/defaultBlueprints/tier1/-",
+"value":{"item":"etheria"}
+},
+{
+"op" : "add",
+"path":"/defaultBlueprints/tier1/-",
+"value":{"item":"ontaria"}
+}
+]

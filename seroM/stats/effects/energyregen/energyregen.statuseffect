@@ -1,0 +1,13 @@
+{
+  "name" : "energyregen",
+  "effectConfig" : {
+    "regenBonusAmount" : 666,
+    "emissionRate" : 1
+  },
+  "defaultDuration" : 5,
+
+  "scripts" : [
+    "energyregen.lua"
+  ],
+  "scriptDelta" : 0
+}

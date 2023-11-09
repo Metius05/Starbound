@@ -1,0 +1,12 @@
+{
+  "name" : "maxprotection",
+  "effectConfig" : {
+  	"protection" : 11,
+  	"grit" : 2.0
+  },
+  "defaultDuration" : 1,
+
+  "scripts" : [
+    "protection.lua"
+  ]
+}

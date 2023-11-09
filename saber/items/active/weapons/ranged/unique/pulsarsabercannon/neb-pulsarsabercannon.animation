@@ -1,0 +1,291 @@
+{
+  "globalTagDefaults" : {
+	"paletteSwaps" : ""
+  },
+
+  "animatedParts" : {
+	"stateTypes" : {
+	  "gun" : {
+		"default" : "gun",
+		"states" : {
+		  //SWORD ANIMATION STATES
+		  "gun" : {
+			"frames" : 1,
+			"cycle" : 0.1,
+			"mode" : "loop",
+            "properties" : {
+              "lightsOff" : ["glow"],
+              "particleEmittersOff" : ["blade"]
+            }
+		  },
+		  //TRANSFORM TO SWORD
+		  "transformToSword" : {
+			"frames" : 4,
+			"cycle" : 0.2875,
+			"mode" : "transition",
+			"transition" : "swordIdle",
+            "properties" : {
+              "lightsOn" : ["glow"],
+              "particleEmittersOn" : ["blade"],
+              "immediateSound" : "/sfx/tools/energypickaxe_start.ogg"
+            }
+		  },
+		  //SWORD ANIMATION STATES
+		  "swordIdle" : {
+			"frames" : 8,
+			"cycle" : 0.6,
+			"mode" : "loop",
+            "properties" : {
+              "lightsOn" : ["glow"],
+              "particleEmittersOn" : ["blade"],
+              "persistentSound" : "/sfx/tools/energypickaxe_idle.ogg"
+            }
+		  },
+		  //TRANSFORM TO GUN
+		  "transformToGun" : {
+			"frames" : 4,
+			"cycle" : 0.325,
+			"mode" : "transition",
+			"transition" : "gun",
+            "properties" : {
+              "lightsOff" : ["glow"],
+              "particleEmittersOff" : ["blade"],
+              "immediateSound" : "/sfx/tools/energypickaxe_stop2.ogg"
+            }
+		  }
+		}
+	  },
+	  //MUZZLEFLASH STATETYPES
+	  "firing" : {
+		"default" : "off",
+		"states" : {
+		  "off" : {},
+		  "fire" : {
+			"frames" : 2,
+			"cycle" : 0.08,
+			"mode" : "transition",
+			"transition" : "off"
+		  }
+		}
+	  },
+	  //SWOOSH STATETYPES
+	  "swoosh" : {
+		"default" : "idle",
+		"states" : {
+		  "idle" : {},
+		  "swing" : {
+			"frames" : 3,
+			"cycle" : 0.1,
+			"mode" : "transition",
+			"transition" : "idle"
+		  },
+		  "swing2" : {
+			"frames" : 3,
+			"cycle" : 0.1,
+			"mode" : "transition",
+			"transition" : "idle"
+		  },
+		  "swing3" : {
+			"frames" : 3,
+			"cycle" : 0.1,
+			"mode" : "transition",
+			"transition" : "idle"
+		  }
+		}
+	  }
+	},
+
+	"parts" : {
+	  "middle" : {
+		"properties" : {
+		  "zLevel" : 0,
+		  "centered" : true,
+		  "image" : "<partImage><paletteSwaps>",
+		  "offset" : [0, 0], // x offset is set dynamically
+		  "transformationGroups" : ["weapon"]
+		},
+		"partStates" : {
+		  "gun" : {
+			"gun" : {
+			  "properties" : {
+				"image" : "<partImage>:gun"
+			  }
+			},
+			"transformToSword" : {
+			  "properties" : {
+				"image" : "<partImage>:transformToSword.<frame>"
+			  }
+			},
+			"swordIdle" : {
+			  "properties" : {
+				"image" : "<partImage>:swordIdle.<frame>?<bladeDirectives>"
+			  }
+			},
+			"transformToGun" : {
+			  "properties" : {
+				"image" : "<partImage>:transformToGun.<frame>"
+			  }
+			}
+		  }
+		}
+	  },
+	  "middleFullbright" : {
+		"properties" : {
+		  "zLevel" : 1,
+		  "centered" : true,
+		  "fullbright" : true,
+		  "image" : "<partImage><paletteSwaps>",
+		  "offset" : [0, 0], // x offset is set dynamically
+		  "transformationGroups" : ["weapon"]
+		},
+		"partStates" : {
+		  "gun" : {
+			"gun" : {
+			  "properties" : {
+				"image" : "<partImage>:gun"
+			  }
+			},
+			"transformToSword" : {
+			  "properties" : {
+				"image" : "<partImage>:transformToSword.<frame>"
+			  }
+			},
+			"swordIdle" : {
+			  "properties" : {
+				"image" : "<partImage>:swordIdle.<frame>?<bladeDirectives>"
+			  }
+			},
+			"transformToGun" : {
+			  "properties" : {
+				"image" : "<partImage>:transformToGun.<frame>"
+			  }
+			}
+		  }
+		}
+	  },
+	  "muzzleFlash" : {
+		"properties" : {
+		  "zLevel" : -1,
+		  "centered" : true,
+		  "offset" : [0.0, 0],
+		  "fullbright" : true,
+		  "transformationGroups" : ["muzzle"]
+		},
+		"partStates" : {
+		  "firing" : {
+			"fire" : {
+			  "properties" : {
+				"image" : "<partImage>:<variant>.<frame>"
+			  }
+			}
+		  }
+		}
+	  },
+	  "swoosh" : {
+		"properties" : {
+		  "zLevel" : -1,
+		  "centered" : true,
+		  "fullbright" : true,
+		  "transformationGroups" : ["weapon"],
+		  "rotationCenter" : [0, 0]
+		},
+		"partStates" : {
+		  "swoosh" : {
+			"idle" : {
+			  "properties" : {
+				"image" : ""
+			  }
+			},
+			"swing" : {
+			  "properties" : {
+				"image" : "/items/active/weapons/ranged/unique/pulsarsabercannon/effects/swoosh1.png:<frame>",
+                "offset" : [0, 2.5],
+                "damageArea" : [[-5, 2], [-2.5, 3], [1, 3], [4, 1.75], [5.25, -0.25], [5.25, -2.25], [3.75, -3.25], [0.25, -2.75]]
+			  }
+			},
+			"swing2" : {
+			  "properties" : {
+				"image" : "/items/active/weapons/ranged/unique/pulsarsabercannon/effects/swoosh2.png:<frame>",
+                "offset" : [5.0, 1.0],
+                "damageArea" : [[-4, 1], [2.5, 1], [2.5, -2], [-4, -2]]
+			  }
+			},
+			"swing3" : {
+			  "properties" : {
+				"image" : "/items/active/weapons/ranged/unique/pulsarsabercannon/effects/swoosh3.png:<frame>",
+                "offset" : [3.5, 0],
+                "damageArea" : [[-4.75, 1.5], [3, 1], [3, -1], [-4.75, -1.5]]
+			  }
+			}
+		  }
+		}
+	  }
+	}
+  },
+
+  "rotationGroups" : {
+	"weapon" : {
+	  "angularVelocity" : 0
+	}
+  },
+
+  "transformationGroups" : {
+	"weapon" : {},
+	"muzzle" : {},
+	"swoosh" : {}
+  },
+
+  "particleEmitters" : {
+	"muzzleFlash" : {
+	  "transformationGroups" : ["muzzle"],
+	  "offsetRegion" : [0, 0, 0, 0],
+	  "particles" : [ ]
+	},
+	"swoosh" : {
+	  "active" : false,
+	  "transformationGroups" : ["weapon"],
+	  "emissionRate" : 1,
+	  "burstCount" : 1,
+	  "particles" : [
+        { "particle" : "protectorblade"},
+        { "particle" : "protectorblade2"}
+      ]
+	},
+    "blade" : {
+      "active" : false,
+      "transformationGroups" : ["weapon"],
+      "offsetRegion" : [1.5, -0.5, 4.0, 0.5],
+      "emissionRate" : 5,
+      "particles" : [
+        { "particle" : "protectorblade"},
+        { "particle" : "protectorblade2"}
+      ]
+    }
+  },
+
+  "lights" : {
+	"muzzleFlash" : {
+	  "active" : false,
+	  "position" : [0, 0],
+      "color" : [0, 55, 155]
+	},
+    "glow" : {
+      "position" : [0, 2.0],
+      "color" : [0, 90, 140],
+      "transformationGroups" : ["weapon"]
+    }
+  },
+
+  "sounds" : {
+	//GUN SOUNDS
+	"fire" : [ ],
+	
+	//SWORD SOUNDS
+	"swing" : [ ],
+	"swing2" : [ ],
+	"swing3" : [ ],
+	
+	//TRANSFORM SOUNDS
+	"transform" : [ ]
+  }
+}

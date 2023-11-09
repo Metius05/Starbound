@@ -1,0 +1,9 @@
+{
+  "name" : "jumpboost20",
+  "effectConfig" : {},
+  "defaultDuration" : 0.02,
+
+  "scripts" : [
+    "jumpboost20.lua"
+  ]
+}

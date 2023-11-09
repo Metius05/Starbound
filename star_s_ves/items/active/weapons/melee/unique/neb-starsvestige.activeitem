@@ -1,0 +1,434 @@
+{
+  "itemName" : "neb-starsvestige",
+  "price" : 960,
+  "level" : 6,
+  "maxStack" : 1,
+  "rarity" : "Legendary",
+  "description" : "A slick blade somehow born from the remnants of a dying star.",
+  "shortdescription" : "Stars Vestige",
+  "tooltipKind" : "base",
+  "category" : "broadsword",
+  "twoHanded" : true,
+  "itemTags" : ["weapon", "melee", "broadsword", "katana"],
+
+  "inventoryIcon" : "icon.png",
+
+  "animation" : "neb-starsvestige.animation",
+  "animationParts" : {
+    "blade" : "blade.png",
+    "handle" : "handle.png",
+	//SCABBARD
+    "scabbard" : "scabbard.png",
+    "scabbardFullbright" : "scabbardfullbright.png"
+  },
+  "animationCustom" : {
+    "sounds" : {
+	  //PRIMARY
+      "fire" : [ "/sfx/melee/laser_weapon_swing1.ogg", "/sfx/melee/laser_weapon_swing2.ogg", "/sfx/melee/laser_weapon_swing3.ogg" ],
+      "fire2" : [ "/sfx/melee/laser_weapon_swing1.ogg", "/sfx/melee/laser_weapon_swing2.ogg", "/sfx/melee/laser_weapon_swing3.ogg" ],
+      "fire3" : [ "/sfx/melee/laser_weapon_swing1.ogg", "/sfx/melee/laser_weapon_swing2.ogg", "/sfx/melee/laser_weapon_swing3.ogg" ],
+      "fire4" : [ "/sfx/melee/sword_guard.ogg" ],
+      "parry" : [ "/sfx/melee/sword_parry.ogg" ],
+      "fire5" : [ "/sfx/melee/laser_weapon_swing1.ogg", "/sfx/melee/laser_weapon_swing2.ogg", "/sfx/melee/laser_weapon_swing3.ogg" ],
+      "fire6" : [ "/sfx/melee/laser_weapon_swing1.ogg", "/sfx/melee/laser_weapon_swing2.ogg", "/sfx/melee/laser_weapon_swing3.ogg" ],
+      "fire7" : [ "/sfx/melee/laser_weapon_swing1.ogg", "/sfx/melee/laser_weapon_swing2.ogg", "/sfx/melee/laser_weapon_swing3.ogg" ],
+	  
+	  //ALT
+      "dashCharge" : [ "/sfx/melee/charge_traildash3.ogg" ],
+      "dashFire" : [ "/sfx/melee/travelingslash_fire3.ogg" ]
+    }
+  },
+
+  "scripts" : ["/items/active/weapons/melee/energymeleeweapon.lua"],
+
+  "activeTime" : 2.5,
+
+  "elementalType" : "physical",
+
+  "primaryAbilityType" : "broadswordcombo",
+  "primaryAbility" : {
+    "name" : "Combo Slash",
+    "scripts" : ["/items/active/weapons/melee/abilities/nebs-customcombo.lua"],
+    "class" : "NebCustomCombo",
+
+    "comboSteps" : 7,
+
+    "flashTime" : 0.15,
+    "flashDirectives" : "fade=FFFFFFFF=0.15",
+
+    "swooshOffsetRegions" : [
+      [0.75, 0.0, 4.25, 5.0],
+      [3.0, -0.5, 6.5, 2.0],
+      [1.5, -1.0, 5.5, 1.0]
+    ],
+
+    // cooldown time multiplier for steps after the first, compounded per combo step
+    "comboSpeedFactor" : 0.9,
+
+    "edgeTriggerGrace" : 0.25,
+
+    "fireTime" : 0.8,
+    "baseDps" : 11.5,
+	
+    "scabbardProjectile" : "starsvestigescabbard",
+	"projectileParameters" : {},
+	"projectileDamage" : 6,
+	"projectileInaccuracy" : 0.05,
+	"projectileAimAngleOffset" : 0.174533,
+
+    "damageConfig" : {
+      "damageSourceKind" : "broadsword",
+      "statusEffects" : [ ],
+      "knockbackMode" : "facing",
+      "timeout" : 0.5
+    },
+    "stepDamageConfig" : [
+      {
+        "baseDamageFactor" : 1.0,
+        "knockback" : 15
+      },
+      {
+        "baseDamageFactor" : 0.5,
+        "knockback" : 10
+      },
+      {
+        "baseDamageFactor" : 1.0,
+        "knockback" : 15
+      },
+      {
+        "baseDamageFactor" : 0.5,
+        "knockback" : 25
+      },
+      {
+        "baseDamageFactor" : 0.5,
+        "knockback" : 25
+      },
+      {
+        "baseDamageFactor" : 1.0,
+        "knockback" : 15
+      },
+      {
+        "baseDamageFactor" : 1.5,
+        "knockback" : 25
+      }
+    ],
+
+    "stances" : {
+      "idle" : {
+        "weaponRotation" : 145,
+        "armRotation" : -45,
+        "aimAngle" : 0,
+        "allowRotate" : false,
+		"directives" : "flipx",
+        "allowFlip" : true
+      },
+	  //UPSLASH
+      "windup1" : {
+        "duration" : 0.1,
+        "armRotation" : -90,
+        "weaponRotation" : -170,
+        "twoHanded" : true,
+		"directives" : "flipx",
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      },
+      "preslash1" : {
+        "duration" : 0.025,
+        "armRotation" : -45,
+        "weaponRotation" : -140,
+        "twoHanded" : true,
+		"directives" : "flipx",
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+      "fire1" : {
+        "duration" : 0.15,
+        "armRotation" : 45,
+        "weaponRotation" : -125,
+        "twoHanded" : true,
+		"directives" : "flipx",
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+      "wait1" : {
+        "duration" : 0.2,
+        "armRotation" : 45,
+        "weaponRotation" : -125,
+        "allowRotate" : false,
+		"directives" : "flipx",
+        "allowFlip" : true,
+        "twoHanded" : true
+      },
+	  //HORIZONTAL SLASH
+      "windup2" : {
+        "duration" : 0.15,
+        "armRotation" : -15,
+        "weaponRotation" : -60,
+        "weaponOffset" : [0, 0],
+        "twoHanded" : true,
+        "allowFlip" : true,
+        "allowRotate" : true
+      },
+      "fire2" : {
+        "duration" : 0.2,
+        "armRotation" : -150,
+        "weaponRotation" : 55,
+        "weaponOffset" : [0, 0],
+        "twoHanded" : true,
+        "allowFlip" : true,
+        "allowRotate" : false
+      },
+      "wait2" : {
+        "duration" : 0.2,
+        "armRotation" : -150,
+        "weaponRotation" : 55,
+        "weaponOffset" : [0, 0],
+        "allowRotate" : false,
+        "allowFlip" : true,
+        "twoHanded" : true
+      },
+	  //DOWNSLASH
+      "windup3" : {
+        "duration" : 0.1,
+        "armRotation" : 90,
+        "weaponRotation" : -10,
+        "twoHanded" : true,
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      },
+      "preslash3" : {
+        "duration" : 0.025,
+        "armRotation" : 55,
+        "weaponRotation" : -45,
+        "twoHanded" : true,
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+      "fire3" : {
+        "duration" : 0.15,
+        "armRotation" : -45,
+        "weaponRotation" : -55,
+        "twoHanded" : true,
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+      "wait3" : {
+        "duration" : 0.2,
+        "armRotation" : -45,
+        "weaponRotation" : -55,
+        "allowRotate" : false,
+        "allowFlip" : true,
+        "twoHanded" : true
+      },
+	  //PARRY
+	  "windup4" : {
+	    "duration" : 0.1,
+        "armRotation" : 45,
+        "weaponRotation" : -205,
+        "twoHanded" : true,
+		"directives" : "flipx",
+
+        "allowRotate" : true,
+        "allowFlip" : true
+	  },
+      "fire4" : {
+	    "duration" : 0.4,
+        "armRotation" : 45,
+        "weaponRotation" : -205,
+        "twoHanded" : true,
+
+        "allowRotate" : false,
+        "allowFlip" : false,
+		"directives" : "flipx",
+		
+		//Parry Config
+		"block" : true,
+        "shieldHealth" : 30
+      },
+      "wait4" : {
+	    "duration" : 0.2,
+        "armRotation" : 45,
+        "weaponRotation" : -205,
+        "twoHanded" : true,
+		"directives" : "flipx",
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+	  //REVERSE HORIZONTAL SLASH
+      "windup5" : {
+        "duration" : 0.15,
+		"armRotation": -30,
+		"weaponRotation": -60,
+        "weaponOffset" : [0, 0],
+        "twoHanded" : true,
+        "allowFlip" : true,
+		"directives" : "flipx",
+        "allowRotate" : true
+      },
+      "fire5" : {
+        "duration" : 0.2,
+		"armRotation": 80,
+		"weaponRotation": -180,
+        "weaponOffset" : [0, 0],
+        "twoHanded" : true,
+        "allowFlip" : true,
+		"directives" : "flipx",
+        "allowRotate" : false
+      },
+      "wait5" : {
+        "duration" : 0.2,
+		"armRotation": 80,
+		"weaponRotation": -180,
+        "weaponOffset" : [0, 0],
+        "allowRotate" : false,
+        "allowFlip" : true,
+		"directives" : "flipx",
+        "twoHanded" : true
+      },
+	  //DOWNSLASH
+      "windup6" : {
+        "duration" : 0.1,
+        "armRotation" : 90,
+        "weaponRotation" : -10,
+        "twoHanded" : true,
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      },
+      "preslash6" : {
+        "duration" : 0.025,
+        "armRotation" : 55,
+        "weaponRotation" : -45,
+        "twoHanded" : true,
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+      "fire6" : {
+        "duration" : 0.15,
+        "armRotation" : -45,
+        "weaponRotation" : -55,
+        "twoHanded" : true,
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+      "wait6" : {
+        "duration" : 0.2,
+        "armRotation" : -45,
+        "weaponRotation" : -55,
+        "allowRotate" : false,
+        "allowFlip" : true,
+        "twoHanded" : true
+      },
+	  //STAB
+      "windup7" : {
+        "duration" : 0.15,
+        "armRotation" : -150,
+        "weaponRotation" : 55,
+        "twoHanded" : true,
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      },
+      "fire7" : {
+        "duration" : 0.3,
+        "armRotation" : 0,
+        "weaponRotation" : -90,
+        "twoHanded" : true,
+
+        "allowRotate" : false,
+        "allowFlip" : true
+      }
+    }
+  },
+  
+  "altAbility" : {
+    "name" : "Dash",
+    "scripts" : ["/items/active/weapons/melee/abilities/broadsword/starsvestigedash/starsvestigedash.lua"],
+    "class" : "NebStarVestigeDash",
+
+	//Slam Params
+	"slamMomentum" : [1, -50],
+	"onlyInAir" : true,
+	"notInLiquid" : true,
+	"notInSpace" : true,
+	"maxAimAngle" : -0.75, //Aiming downwards is less than 0, aiming up is more than 0
+	"searchDistance" : [0, -7], //[x,y] 1 = 1 block, minimum point from the player to the ground to initiate slam
+
+	"slamProjectile" : "starsvestigewave",
+	"slamProjectileParameters" : {
+	  "power" : 10
+	},
+	
+    "cooldownTime" : 1.25,
+    "energyUsage" : 400,
+
+    "dashTime" : 0.275,
+    "dashSpeed" : 150,
+
+    "trailInterval" : 5,
+    "projectileType" : "energytravelingswoosh",
+    "projectileParameters" : {
+	  "orientationLocked" : false,
+      "power" : 0.5,
+	  "speed" : 25,
+      "processing" : "?replace;008CD9=6545DE;60B8EA=A894F8"
+    },
+    "projectileOffset" : [0, -1.5],
+
+    "damageConfig" : {
+      "damageSourceKind" : "broadsword",
+      "statusEffects" : [ ],
+      "baseDamage" : 8,
+      "knockback" : 5,
+      "timeout" : 0.5,
+      "timeoutGroup" : "alt"
+    },
+
+    "stances" : {
+      "windup" : {
+        "duration" : 0.3,
+        "armRotation" : -45,
+        "weaponRotation" : 155,
+        "twoHanded" : true,
+
+        "allowRotate" : false,
+        "allowFlip" : true
+      },
+      "dash" : {
+        "armRotation" : 45,
+        "weaponRotation" : 135,
+        "twoHanded" : true,
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      },
+      "slamWindup" : {
+        "duration" : 0.2,
+        "armRotation" : 70,
+        "weaponRotation" : 110,
+        "twoHanded" : true,
+
+        "allowRotate" : false,
+        "allowFlip" : true
+      },
+      "slamFire" : {
+        "armRotation" : -50,
+        "weaponRotation" : -130,
+        "twoHanded" : true,
+        "allowRotate" : false,
+        "allowFlip" : true
+      }
+    }
+  },
+
+  "builder" : "/items/buildscripts/buildunrandweapon.lua"
+}

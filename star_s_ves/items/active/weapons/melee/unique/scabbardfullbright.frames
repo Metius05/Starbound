@@ -1,0 +1,11 @@
+{
+  "frameGrid" : {
+    "size" : [13, 45],
+    "dimensions" : [6, 1],
+    "names" : [
+      ["return.1", "return.2", "return.3", "return.4", "return.5", "visible"]
+    ]
+  },
+
+  "aliases" : {}
+}

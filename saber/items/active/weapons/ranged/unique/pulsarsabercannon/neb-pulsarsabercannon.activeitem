@@ -1,0 +1,285 @@
+{
+  "itemName" : "neb-pulsarsabercannon",
+  "price" : 3500,
+  "inventoryIcon" : "neb-pulsarsabercannonicon.png",
+  "maxStack" : 1,
+  "rarity" : "Legendary",
+  "description" : "An experimental plasma handcannon which can form into a fierce plasma katana.",
+  "shortdescription" : "Pulsar Saber-Cannon",
+  "level" : 8,
+  "tooltipKind" : "base",
+  "category" : "Saber-Cannon",
+  "itemTags" : ["weapon", "ranged", "pistol", "melee", "broadsword", "gunblade", "upgradeableWeapon"],
+  "twoHanded" : true,
+
+  "animation" : "neb-pulsarsabercannon.animation",
+  "animationParts" : {
+    "middle" : "neb-pulsarsabercannon.png",
+    "middleFullbright" : "neb-pulsarsabercannonlights.png",
+    "muzzleFlash" : "/items/active/weapons/ranged/unique/pulsarsabercannon/effects/muzzleflash.png"
+  },
+  "animationCustom" : {
+    "animatedParts" : {
+      "parts" : {
+        "middleFullbright" : {
+		  "properties" : {
+		    "offset" : [1.875, 0.125]
+		  }
+		},
+        "muzzleFlash" : {
+		  "properties" : {
+		    "offset" : [0.0, 0.0]
+		  }
+		}
+      }
+    },
+    "sounds" : {
+	  //GUN SOUNDS
+      "fire" : [ "/sfx/gun/plasma_pistol1.ogg", "/sfx/gun/plasma_pistol2.ogg", "/sfx/gun/plasma_pistol3.ogg" ],
+	  //SWORD SOUNDS
+      "swing" : [ "/sfx/melee/laser_weapon_swing1.ogg", "/sfx/melee/laser_weapon_swing2.ogg", "/sfx/melee/laser_weapon_swing3.ogg" ],
+      "swing2" : [ "/sfx/melee/laser_weapon_swing1.ogg", "/sfx/melee/laser_weapon_swing2.ogg", "/sfx/melee/laser_weapon_swing3.ogg" ],
+      "swing3" : [ "/sfx/melee/laser_weapon_swing1.ogg", "/sfx/melee/laser_weapon_swing2.ogg", "/sfx/melee/laser_weapon_swing3.ogg" ],
+	  //TRANSFORM SOUNDS
+	  "transform" : [ "/sfx/objects/cropshipper_door_open.ogg" ]
+    }
+  },
+
+  "baseOffset" : [1.875, 0.125],
+  "muzzleOffset" : [0.75, 0.325],
+
+  "scripts" : ["/items/active/weapons/ranged/unique/pulsarsabercannon/neb-pulsarsabercannon.lua"],
+
+  "elementalType" : "physical",
+  
+  "primaryAbility" : {
+    "scripts" : ["/items/active/weapons/ranged/gunfire.lua"],
+    "class" : "GunFire",
+
+    "fireTime" : 0.33,
+    "baseDps" : 666.05,
+    "inaccuracy" : 0.0065,
+    "energyUsage" : 20,
+
+    "projectileCount" : 1,
+    "fireType" : "auto",
+
+    "projectileType" : "pulsarsabercannonbullet",
+    "projectileParameters" : {
+      "knockback" : 11
+    },
+	
+    "stances" : {
+      "idle" : {
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "twoHanded" : false,
+        "weaponOffset" : [0.125, 0.0],
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      },
+      "fire" : {
+        "duration" : 0,
+        "armRotation" : 6,
+        "weaponRotation" : 12,
+		"weaponOffset" : [-0.05, 0.0],
+        "twoHanded" : false,
+
+        "allowRotate" : false,
+        "allowFlip" : true
+      },
+      "cooldown" : {
+        "duration" : 0.20,
+        "armRotation" : 6,
+        "weaponRotation" : 12,
+		"weaponOffset" : [-0.05, 0.0],
+        "twoHanded" : false,
+
+        "allowRotate" : false,
+        "allowFlip" : true
+      }
+    }
+  },
+
+  "altAbility" : {
+    "name" : "Form Shift",
+    "scripts" : ["/items/active/weapons/ranged/abilities/transform/neb-guntosword.lua"],
+	"class" : "NebGuntoSword",
+
+    "transformCooldownTime" : 0.75,
+
+    "comboSteps" : 3,
+
+    "flashTime" : 0.15,
+    "flashDirectives" : "fade=FFFFFFFF=0.15",
+
+    "swooshOffsetRegions" : [
+      [0.75, 0.0, 4.25, 5.0],
+      [3.0, -0.5, 6.5, 2.0],
+      [1.5, -1.0, 5.5, 1.0]
+    ],
+
+    // cooldown time multiplier for steps after the first, compounded per combo step
+    "comboSpeedFactor" : 0.9,
+
+    "edgeTriggerGrace" : 0.25,
+
+    "fireTime" : 0.45,
+    "baseDps" : 13.2,
+
+    "damageConfig" : {
+      "damageSourceKind" : "broadsword",
+      "statusEffects" : [ ],
+      "knockbackMode" : "facing",
+      "timeout" : 0.5
+    },
+    "stepDamageConfig" : [
+      {
+        "baseDamageFactor" : 1.0,
+        "knockback" : 15
+      },
+      {
+        "baseDamageFactor" : 0.5,
+        "knockback" : 10
+      },
+      {
+        "baseDamageFactor" : 1.0,
+        "knockback" : 25
+      }
+    ],
+
+    "stances" : {
+      "idle" : {
+        "armRotation" : -90,
+        "weaponRotation" : 80,
+        "allowRotate" : false,
+        "weaponOffset" : [0.125, -0],
+        "allowFlip" : true
+      },
+	  //Transforming from GUN to SWORD
+	  "transforming" : {
+        "duration" : 0.3375,
+		"armRotation" : 0,
+		"endArmRotation" : -90,
+        "weaponRotation" : 0,
+        "endWeaponRotation" : 80,
+        "weaponOffset" : [0.0625, 0.0625],
+        "endWeaponOffset" : [0.125, -0],
+        "twoHanded" : false,
+
+        "allowRotate" : false,
+        "allowFlip" : true
+      },
+	  //Transforming from SWORD to GUN
+      "reverting" : {
+        "duration" : 0.3,
+		"armRotation" : -90,
+		"endArmRotation" : 0,
+        "weaponRotation" : 80,
+        "endWeaponRotation" : 0,
+        "twoHanded" : false,
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      },
+      "windup1" : {
+        "duration" : 0.125,
+        "armRotation" : 90,
+        "weaponRotation" : 80,
+        "twoHanded" : true,
+        "weaponOffset" : [0.125, -0],
+
+        "allowRotate" : false,
+        "allowFlip" : true
+      },
+      "preslash1" : {
+        "duration" : 0.0255,
+        "armRotation" : 55,
+        "weaponRotation" : 45,
+        "twoHanded" : true,
+        "weaponOffset" : [0.125, -0],
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+      "swing1" : {
+        "duration" : 0.125,
+        "armRotation" : -45,
+        "weaponRotation" : 35,
+        "twoHanded" : true,
+        "weaponOffset" : [0.125, -0],
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+      "wait1" : {
+        "duration" : 0.175,
+        "armRotation" : -45,
+        "weaponRotation" : 35,
+        "allowRotate" : false,
+        "weaponOffset" : [0.125, -0],
+        "allowFlip" : true,
+        "twoHanded" : true
+      },
+      "windup2" : {
+        "duration" : 0.125,
+        "armRotation" : -15,
+        "weaponRotation" : 30,
+        "weaponOffset" : [0.125, -0],
+        "twoHanded" : true,
+        "allowFlip" : true,
+        "allowRotate" : false
+      },
+      "swing2" : {
+        "duration" : 0.125,
+        "armRotation" : -150,
+        "weaponRotation" : 145,
+        "weaponOffset" : [0.125, -0],
+        "twoHanded" : true,
+        "allowFlip" : true,
+        "allowRotate" : false
+      },
+      "wait2" : {
+        "duration" : 0.175,
+        "armRotation" : -150,
+        "weaponRotation" : 145,
+        "weaponOffset" : [0.125, -0],
+        "allowRotate" : false,
+        "allowFlip" : true,
+        "twoHanded" : true
+      },
+      "windup3" : {
+        "duration" : 0.125,
+        "armRotation" : -150,
+        "weaponRotation" : 135,
+        "twoHanded" : true,
+        "weaponOffset" : [0.125, -0],
+
+        "allowRotate" : false,
+        "allowFlip" : true
+      },
+      "swing3" : {
+        "duration" : 0.225,
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "twoHanded" : true,
+        "weaponOffset" : [0.0625, 0],
+
+        "allowRotate" : false,
+        "allowFlip" : true
+      }
+    }
+  },
+  
+  "builder" : "/items/buildscripts/buildunrandweapon.lua",
+
+  "upgradeParameters" : {
+    "inventoryIcon" : "neb-pulsarsabercannonicon_l6.png",
+    "animationParts" : {
+      "middle" : "neb-pulsarsabercannon_l6.png",
+      "middleFullbright" : "neb-pulsarsabercannonlights_l6.png"
+    },
+    "shortdescription" : "Pulsar Saber-Cannon ^yellow;^reset;"
+  }
+}

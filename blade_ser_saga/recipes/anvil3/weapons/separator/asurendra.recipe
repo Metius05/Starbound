@@ -1,0 +1,9 @@
+{
+  "input" : [
+    { "item" : "refinedviolium", "count" : 30 },
+	{ "item" : "solariumstar", "count" : 30 },
+	{ "item" : "teleportercore", "count" : 3 }
+  ],
+  "output" : { "item" : "selevasword", "count" : 1 },
+  "groups" : [ "craftingseparator", "weapons", "all" ]
+}

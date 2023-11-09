@@ -1,0 +1,16 @@
+{
+  "projectileName" : "starsvestigescabbardreturning",
+  "image" : "scabbardreturning.png",
+  "animationCycle" : 0.3,
+  "frameNumber" : 6,
+  "speed" : 0,
+  "pointLight" : true,
+  "statusEffects" : [ ],
+  "damagePoly" : [ [1,0], [-1,0], [0,-1], [0,1] ],
+  "animationLoops" : false,
+  "piercing" : true,
+  "bounces" : -1,
+  "flippable" : true,
+  "damageKind" : "hammer",
+  "knockback" : 15
+}

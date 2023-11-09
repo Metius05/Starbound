@@ -1,0 +1,22 @@
+{
+  "itemName" : "godeppaugment",
+  "price" : 1000000,
+  "rarity" : "Legendary",
+  "tooltipKind" : "eppaugment",
+  "category" : "eppAugment",
+  "inventoryIcon" : "godeppaugment.png",
+  "description" : "In this augment, you will receive all resistances to different types of damage and positive buffs!",
+  "shortdescription" : "Ancient Augment",
+
+  "augment" : {
+    "type" : "back",
+    "name" : "godeppaug",
+    "displayName" : "God Augment",
+    "displayIcon" : "/items/augments/back/godeppaugment.png",
+    "effects" : [ "maxhealthboostaugment3", "maxprotection", "maxenergyboostaugment3", "energyregen", "lightaugment3", "nofalldamage", "poisonblockaugment", "fireblockaugment", "electricblockaugment", "iceblockaugment", "rage" ]
+  },
+
+  "radioMessagesOnPickup" : [ "pickupaugment" ],
+
+  "scripts" : [ "/scripts/augments/augment.lua" ]
+}

@@ -1,0 +1,54 @@
+[
+  { "op" : "replace",
+    "path" : "/experienceorb/playerMax",
+    "value" : 2143690000
+  },
+  { "op" : "replace",
+    "path" : "/masterypoint/playerMax",
+    "value" : 214344
+  },
+  { "op" : "replace",
+    "path" : "/currentlevel/playerMax",
+    "value" : 4630
+  },
+  { "op" : "replace",
+    "path" : "/statpoint/playerMax",
+    "value" : 720213
+  },
+  { "op" : "replace",
+    "path" : "/agilitypoint/playerMax",
+    "value" : 102887
+  },
+  { "op" : "replace",
+    "path" : "/dexteritypoint/playerMax",
+    "value" : 102887
+  },
+  { "op" : "replace",
+    "path" : "/endurancepoint/playerMax",
+    "value" : 102887
+  },
+  { "op" : "replace",
+    "path" : "/intelligencepoint/playerMax",
+    "value" : 102887
+  },
+  { "op" : "replace",
+    "path" : "/strengthpoint/playerMax",
+    "value" : 102887
+  },
+  { "op" : "replace",
+    "path" : "/vigorpoint/playerMax",
+    "value" : 102887
+  },
+  { "op" : "replace",
+    "path" : "/vitalitypoint/playerMax",
+    "value" : 102887
+  },
+  { 
+	"op" : "add",
+    "path" : "/currMaxLevel",
+    "value" : {
+		"playerMax" : 4630,
+		"sail_hidden" : true
+	}
+  }
+]

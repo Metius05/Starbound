@@ -1,0 +1,15 @@
+{
+  "input" : [
+    { "item" : "violiumbroadsword", "count" : 1 },
+    { "item" : "aegisaltpistol", "count" : 1 },
+    { "item" : "refinedaegisalt", "count" : 12 },
+    { "item" : "refinedviolium", "count" : 11 },
+    { "item" : "refinedferozium", "count" : 10 },
+    { "item" : "solariumstar", "count" : 16 },
+    { "item" : "durasteelbar", "count" : 25 },
+    { "item" : "battery", "count" : 3 },
+	{ "item" : "money", "count" : 6000000 }
+  ],
+  "output" : { "item" : "neb-pulsarsabercannon", "count" : 1 },
+  "groups" : [ "craftingaccelerator", "weapons", "all" ]
+}

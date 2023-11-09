@@ -1,0 +1,26 @@
+{
+  "projectileName" : "starsvestigewave",
+  "image" : "starsvestigewave.png",
+  "animationCycle" : 0.2,
+  "frameNumber" : 3,
+  "lightColor" : [150, 100, 100],
+  "fullbright" : true,
+
+  "damageKindImage" : "icon.png",
+  "physics" : "smoothrollingboulder",
+  "emitters" : [ ],
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/plasmaexplosion2/plasmaexplosion2.config"
+    }
+  ],
+  "damagePoly" : [ [28, -11], [24, 2], [2, 0], [-12, -11] ],
+  "damageKind" : "plasma",
+
+  "flippable" : true,
+  "bounces" : -1,
+  "piercing" : true,
+  "timeToLive" : 2.0,
+  "speed" : 25
+}

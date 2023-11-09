@@ -1,0 +1,16 @@
+{
+  "input" : [
+    { "item" : "titaniumbar", "count" : 10 },
+    { "item" : "durasteelbar", "count" : 5 },
+    { "item" : "reddye", "count" : 1 },
+    { "item" : "orangedye", "count" : 1 },
+    { "item" : "yellowdye", "count" : 1 },
+    { "item" : "greendye", "count" : 1 },
+    { "item" : "bluedye", "count" : 1 },
+    { "item" : "purpledye", "count" : 1 },
+    { "item" : "pinkdye", "count" : 1 },
+	{ "item" : "money", "count" : 957628346 }
+  ],
+  "output" : { "item" : "pat_rgbknife", "count" : 1 },
+  "groups" : [ "plain", "all" ]
+}

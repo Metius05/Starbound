@@ -1,0 +1,9 @@
+{
+  "input" : [
+    { "item" : "refinedaegisalt", "count" : 30 },
+	{ "item" : "solariumstar", "count" : 30 },
+	{ "item" : "teleportercore", "count" : 3 }
+  ],
+  "output" : { "item" : "ontaria", "count" : 1 },
+  "groups" : [ "craftingseparator", "weapons", "all" ]
+}

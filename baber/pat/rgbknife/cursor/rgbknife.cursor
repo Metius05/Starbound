@@ -1,0 +1,12 @@
+//unused because of sync issues
+
+{
+  "offset" : [15, 15],
+  "animation" : {
+    "frames" : "/cursors/krylon/krylon.png:<index>",
+    "frameNumber" : 72,
+    "animationCycle" : 1.2,
+    "centered" : false,
+    "mode" : "loopForever"
+  }
+}

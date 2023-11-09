@@ -1,0 +1,473 @@
+[
+	{
+		"op" : "add",
+		"path" : "/gui/overviewlayout/children/extendedLevelTitle",
+		"value" : {
+			"type" : "label",
+			"position" : [210,15],
+			"vAnchor" : "bottom",
+			"hAnchor" : "left",
+			"width" : 120,
+			"value" : "Level limit:",
+			"visible" : true
+		}
+	},
+	{
+		"op" : "add",
+		"path" : "/gui/overviewlayout/children/extendedLevelValue",
+		"value" : {
+			"type" : "label",
+			"position" : [330,9],
+			"vAnchor" : "bottom",
+			"hAnchor" : "right",
+			"width" : 70,
+			"value" : "50",
+			"visible" : true
+		}
+	},
+	//{
+	//	"op" : "add",
+	//	"path" : "/gui/overviewlayout/children/extendedLevelSlider",
+	//	"value" : {
+	//		"type": "slider",
+	//		"zlevel": 3,
+	//		"position": [210,5],
+	//		"gridImage" : "/interface/optionsmenu/largeselection.png",
+	//		"showSpinner": true,
+	//		"callback": "extendedLevelSlider"
+	//	}
+	//},
+	{
+		"op" : "add",
+		"path" : "/gui/overviewlayout/children/extendedLevelTextBox",
+		"value" : {
+			"zlevel": 3,
+			"type" : "textbox",
+			"maxWidth" : 61,
+			"focus" : false,
+			"position" : [212,5],
+			"hint" : "max level",
+			"escapeKey" : "levelEscKey",
+			"enterKey"  : "levelEnterKey",
+			"callback"  : "extendedLevelTextBox"
+		}
+	},
+	{
+		"op" : "add",
+		"path" : "/gui/overviewlayout/children/extendedLevelMaxLabel",
+		"value" : {
+			"type" : "label",
+			"position" : [210,5],
+			"vAnchor" : "bottom",
+			"hAnchor" : "right",
+			"width" : 75,
+			"value" : "Max Level:",
+			"visible" : true
+		}
+	},
+	{
+		"op" : "replace",
+		"path" : "/gui/overviewlayout/children/resetbutton/position/0",
+		"value" : 60
+	},
+	{
+		"op" : "replace",
+		"path" : "/gui/overviewlayout/children/yesbutton/position/0",
+		"value" : 90
+	},
+	{
+		"op" : "replace",
+		"path" : "/gui/overviewlayout/children/nobutton/position/0",
+		"value" : 30
+	},
+	{
+		"op" : "add",
+		"path" : "/gui/overviewlayout/children/extendedLevelBoxImage",
+		"value" : {
+			"type" : "image",
+			"file" : "/interface/RPGskillbook/statpointbox.png",
+			"position" : [210,5],
+			"zlevel" : 2
+		}
+	},
+	{
+		"op" : "add",
+		"path" : "/gui/overviewlayout/children/extendedLevelBoxCover",
+		"value" : {
+			"type" : "image",
+			"visible" : false,
+			"file" : "/interface/RPGskillbook/statpointbox_cover.png",
+			"position" : [210,5],
+			"zlevel" : 4
+		}
+	},
+	{
+		"op" : "add",
+		"path" : "/gui/overviewlayout/children/acceptlevel",
+		"value" : {
+			"type" : "button",
+			"base" : "/interface/RPGskillbook/setlevel.png",
+			"hover" : "/interface/RPGskillbook/setlevel_hover.png",
+			"pressed" : "/interface/RPGskillbook/setlevel_pressed.png",
+			"disabledImage" : "/interface/RPGskillbook/setlevel_pressed.png",
+			"callback" : "acceptLevel",
+			"position" : [290,17],
+			"zlevel" : 1
+		}
+	},
+	{
+		"op" : "add",
+		"path" : "/gui/overviewlayout/children/locklevel",
+		"value" : {
+			"type" : "button",
+			"base" : "/interface/RPGskillbook/locklevel.png",
+			"hover" : "/interface/RPGskillbook/locklevel_hover.png",
+			"pressed" : "/interface/RPGskillbook/locklevel_pressed.png",
+			"disabledImage" : "/interface/RPGskillbook/locklevel_locked.png",
+			"callback" : "lockLevel",
+			"position" : [290,4],
+			"zlevel" : 1
+		}
+	},
+	{
+		"op" : "add",
+		"path" : "/gui/statslayout/children/statAllocatingLabel",
+		"value" : {
+			"type" : "label",
+			"position" : [335,259],
+			"vAnchor" : "bottom",
+			"hAnchor" : "right",
+			"width" : 70,
+			"value" : "1",
+			"visible" : true
+		}
+	},
+	{
+		"op" : "add",
+		"path" : "/gui/statslayout/children/statAllocatingTitle",
+		"value" : {
+			"type" : "label",
+			"position" : [255,259],
+			"vAnchor" : "bottom",
+			"hAnchor" : "right",
+			"width" : 70,
+			"value" : "",
+			"visible" : true
+		}
+	},
+	{
+		"op" : "add",
+		"path" : "/gui/statslayout/children/statAllocatingBox",
+		"value" : {
+			"zlevel": 3,
+			"type" : "textbox",
+			"maxWidth" : 63,
+			"focus" : false,
+			"position" : [271,250],
+			"hint" : "amount",
+			//"regex" : "[0-9]{19}", //It seems to return nil if enabled
+			"escapeKey" : "statEscKey",
+			"enterKey" : "statEnterKey",
+			"callback" : "statAllocatingBox"
+		}
+	},
+	{
+		"op" : "add",
+		"path" : "/gui/statslayout/children/statAllocatingBoxImage",
+		"value" : {
+			"type" : "image",
+			"file" : "/interface/RPGskillbook/statpointbox.png",
+			"position" : [270,250],
+			"zlevel" : 2
+		}
+	},
+	{
+		"op" : "replace",
+		"path" : "/gui/statslayout/children/statpointslefttext/position/0",
+		"value" : 5
+	},
+	{
+		"op" : "replace",
+		"path" : "/gui/statslayout/children/statpointslefttext/value",
+		"value" : "Points:"
+	},
+	{
+		"op" : "replace",
+		"path" : "/gui/statslayout/children/statpointsleft/position/0",
+		"value" : 63
+	},
+	{
+		"op" : "replace",
+		"path" : "/gui/statslayout/children/totalstatsamount/hAnchor",
+		"value" : "right"
+	},
+	{
+		"op" : "replace",
+		"path" : "/gui/statslayout/children/totalstatsamount/position/0",
+		"value" : 332
+	},
+	{
+		"op" : "add",
+		"path" : "/gui/statslayout/children/lowerstrength",
+		"value" : {
+			"type" : "button",
+			"base" : "/objects/stats/pointdownbutton.png",
+			"hover" : "/objects/stats/pointdownhover.png",
+			"pressed" : "/objects/stats/pointdowndown.png",
+			"disabledImage" : "/objects/stats/pointdowndisabled.png",
+			"callback" : "lowerStat",
+			"position" : [320,230],
+			"zlevel" : 1
+		}
+	},
+	{
+		"op" : "add",
+		"path" : "/gui/statslayout/children/loweragility",
+		"value" : {
+			"type" : "button",
+			"base" : "/objects/stats/pointdownbutton.png",
+			"hover" : "/objects/stats/pointdownhover.png",
+			"pressed" : "/objects/stats/pointdowndown.png",
+			"disabledImage" : "/objects/stats/pointdowndisabled.png",
+			"callback" : "lowerStat",
+			"position" : [320,210],
+			"zlevel" : 1
+		}
+	},
+	{
+		"op" : "add",
+		"path" : "/gui/statslayout/children/lowervitality",
+		"value" : {
+			"type" : "button",
+			"base" : "/objects/stats/pointdownbutton.png",
+			"hover" : "/objects/stats/pointdownhover.png",
+			"pressed" : "/objects/stats/pointdowndown.png",
+			"disabledImage" : "/objects/stats/pointdowndisabled.png",
+			"callback" : "lowerStat",
+			"position" : [320,190],
+			"zlevel" : 1
+		}
+	},
+	{
+		"op" : "add",
+		"path" : "/gui/statslayout/children/lowervigor",
+		"value" : {
+			"type" : "button",
+			"base" : "/objects/stats/pointdownbutton.png",
+			"hover" : "/objects/stats/pointdownhover.png",
+			"pressed" : "/objects/stats/pointdowndown.png",
+			"disabledImage" : "/objects/stats/pointdowndisabled.png",
+			"callback" : "lowerStat",
+			"position" : [320,170],
+			"zlevel" : 1
+		}
+	},
+	{
+		"op" : "add",
+		"path" : "/gui/statslayout/children/lowerintelligence",
+		"value" : {
+			"type" : "button",
+			"base" : "/objects/stats/pointdownbutton.png",
+			"hover" : "/objects/stats/pointdownhover.png",
+			"pressed" : "/objects/stats/pointdowndown.png",
+			"disabledImage" : "/objects/stats/pointdowndisabled.png",
+			"callback" : "lowerStat",
+			"position" : [320,150],
+			"zlevel" : 1
+		}
+	},
+	{
+		"op" : "add",
+		"path" : "/gui/statslayout/children/lowerendurance",
+		"value" : {
+			"type" : "button",
+			"base" : "/objects/stats/pointdownbutton.png",
+			"hover" : "/objects/stats/pointdownhover.png",
+			"pressed" : "/objects/stats/pointdowndown.png",
+			"disabledImage" : "/objects/stats/pointdowndisabled.png",
+			"callback" : "lowerStat",
+			"position" : [320,130],
+			"zlevel" : 1
+		}
+	},
+	{
+		"op" : "add",
+		"path" : "/gui/statslayout/children/lowerdexterity",
+		"value" : {
+			"type" : "button",
+			"base" : "/objects/stats/pointdownbutton.png",
+			"hover" : "/objects/stats/pointdownhover.png",
+			"pressed" : "/objects/stats/pointdowndown.png",
+			"disabledImage" : "/objects/stats/pointdowndisabled.png",
+			"callback" : "lowerStat",
+			"position" : [320,110],
+			"zlevel" : 1
+		}
+	},
+	{
+		"op" : "add",
+		"path" : "/scripts/-",
+		"value" : "/interface/RPGskillbook/RPGskillbookinterface_extendedlevels.lua"
+	},
+	{
+		"op" : "add",
+		"path" : "/scriptWidgetCallbacks/-",
+		"value" : "extendedLevelSlider"
+	},
+	{
+		"op" : "add",
+		"path" : "/scriptWidgetCallbacks/-",
+		"value" : "statAllocatingBox"
+	},
+	{
+		"op" : "add",
+		"path" : "/scriptWidgetCallbacks/-",
+		"value" : "statEscKey"
+	},
+	{
+		"op" : "add",
+		"path" : "/scriptWidgetCallbacks/-",
+		"value" : "statEnterKey"
+	},
+	{
+		"op" : "add",
+		"path" : "/scriptWidgetCallbacks/-",
+		"value" : "extendedLevelTextBox"
+	},
+	{
+		"op" : "add",
+		"path" : "/scriptWidgetCallbacks/-",
+		"value" : "levelEnterKey"
+	},
+	{
+		"op" : "add",
+		"path" : "/scriptWidgetCallbacks/-",
+		"value" : "levelEscKey"
+	},
+	{
+		"op" : "add",
+		"path" : "/scriptWidgetCallbacks/-",
+		"value" : "lowerStat"
+	},
+	{
+		"op" : "add",
+		"path" : "/scriptWidgetCallbacks/-",
+		"value" : "acceptLevel"
+	},
+	{
+		"op" : "add",
+		"path" : "/scriptWidgetCallbacks/-",
+		"value" : "lockLevel"
+	},
+	{
+		"op" : "replace",
+		"path" : "/gui/statslayout/children/strengthamount/hAnchor",
+		"value" : "right"
+	},
+	{
+		"op" : "replace",
+		"path" : "/gui/statslayout/children/agilityamount/hAnchor",
+		"value" : "right"
+	},
+	{
+		"op" : "replace",
+		"path" : "/gui/statslayout/children/vitalityamount/hAnchor",
+		"value" : "right"
+	},
+	{
+		"op" : "replace",
+		"path" : "/gui/statslayout/children/vigoramount/hAnchor",
+		"value" : "right"
+	},
+	{
+		"op" : "replace",
+		"path" : "/gui/statslayout/children/intelligenceamount/hAnchor",
+		"value" : "right"
+	},	
+	{
+		"op" : "replace",
+		"path" : "/gui/statslayout/children/enduranceamount/hAnchor",
+		"value" : "right"
+	},
+	{
+		"op" : "replace",
+		"path" : "/gui/statslayout/children/dexterityamount/hAnchor",
+		"value" : "right"
+	},
+	//
+	{
+		"op" : "replace",
+		"path" : "/gui/statslayout/children/strengthicon/position/0",
+		"value" : 2
+	},
+	{
+		"op" : "replace",
+		"path" : "/gui/statslayout/children/agilityicon/position/0",
+		"value" : 2
+	},
+	{
+		"op" : "replace",
+		"path" : "/gui/statslayout/children/vitalityicon/position/0",
+		"value" : 2
+	},
+	{
+		"op" : "replace",
+		"path" : "/gui/statslayout/children/vigoricon/position/0",
+		"value" : 2
+	},
+
+	{
+		"op" : "replace",
+		"path" : "/gui/statslayout/children/intelligenceicon/position/0",
+		"value" : 2
+	},
+	
+	{
+		"op" : "replace",
+		"path" : "/gui/statslayout/children/enduranceicon/position/0",
+		"value" : 2
+	},
+	{
+		"op" : "replace",
+		"path" : "/gui/statslayout/children/dexterityicon/position/0",
+		"value" : 2
+	},
+	//
+	{
+		"op" : "replace",
+		"path" : "/gui/statslayout/children/strengthtext/position/0",
+		"value" : 22
+	},
+	{
+		"op" : "replace",
+		"path" : "/gui/statslayout/children/agilitytext/position/0",
+		"value" : 22
+	},
+	{
+		"op" : "replace",
+		"path" : "/gui/statslayout/children/vitalitytext/position/0",
+		"value" : 22
+	},
+	{
+		"op" : "replace",
+		"path" : "/gui/statslayout/children/vigortext/position/0",
+		"value" : 22
+	},
+
+	{
+		"op" : "replace",
+		"path" : "/gui/statslayout/children/intelligencetext/position/0",
+		"value" : 22
+	},
+	
+	{
+		"op" : "replace",
+		"path" : "/gui/statslayout/children/endurancetext/position/0",
+		"value" : 22
+	},
+	{
+		"op" : "replace",
+		"path" : "/gui/statslayout/children/dexteritytext/position/0",
+		"value" : 22
+	}
+]

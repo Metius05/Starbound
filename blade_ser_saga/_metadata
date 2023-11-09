@@ -1,0 +1,13 @@
+{
+  "version" : "1.1",
+  "tags" : "Weapons",
+  "author" : "Steven Steel",
+  "description" : "This is the first sword I've ever made: Sagaria.\n\nEnergy Blade Series Number 1: Sagaria\n\nThis is a Blade, a type of \"living weapon\". Based on the Blades in the game, Xenoblade Chronicles 2, this one being based on the Aegis: Pyra.\n\nYou can craft Sagaria in the Replicator with the Separator Addon using 30 Refined Violium, 30 Solarium Stars, and 3 Teleporter Cores.\nYou can craft Etheria in the Replicator with the Separator Addon using 30 Refined Aegisalt, 30 Solarium Stars, and 3 Teleporter Cores.\nYou can craft Ontaria in the Replicator with the Separator Addon using 30 Refined Ferozium, 30 Solarium Stars, and 3 Teleporter Cores.\n\nStats:\n\nDamage: 14.55\nFire Rate: 0.5\nDPS: 40\nAbility: Flip Slash\n\nIt's a strong sword, yet you'll find it's very balanced. It's nothing you'll be one shotting the Ruin with, but it's stronger than even the Empowered Protectorate Broadsword and strong enough to do some serious damage.\n\nEnjoy!\n\nPatch 1.1:\n\n-Fixed Sagaria's value.\n\nPatch 1.2:\n\n-Adjusted Sagaria's value\n-Increased overall damage\n-Lowered Recipe Requirements\n\nPatch 1.3:\n\n-Fixed Sagaria's primary swoosh.\n\nUpdate #2:\n\n-Added Etheria, and Ontaria. (Blue and Green color variants)\n-Properly animated Sagaria's ignition and retraction",
+  "requires" : [],
+  "name" : "Sagaria Unleashed",
+  "friendlyName" : "Starbound - Blade Series: Sagaria, Etheria, and Ontaria",
+  "steamContentId" : "1128845002",
+  "priority" : -1,
+  "link" : "steam://url/CommunityFilePage/1128845002",
+  "includes" : []
+}

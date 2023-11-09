@@ -1,0 +1,11 @@
+[
+	{
+		"op" : "replace",
+		"path" : "/endurance/1/apply/0/amount",
+		"value" : 0.0
+	},
+	{
+		"op" : "remove",
+		"path" : "/endurance/1"
+	}
+]

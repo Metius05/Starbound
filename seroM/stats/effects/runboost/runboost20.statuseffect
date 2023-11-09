@@ -1,0 +1,9 @@
+{
+  "name" : "runboost20",
+  "effectConfig" : {},
+  "defaultDuration" : 0.02,
+
+  "scripts" : [
+    "runboost20.lua"
+  ]
+}

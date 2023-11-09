@@ -1,0 +1,11 @@
+{
+  "name" : "rage",
+  "effectConfig" : {
+    "powerModifier" : 2.2
+  },
+  "defaultDuration" : 15,
+
+  "scripts" : [
+    "rage.lua"
+  ]
+}

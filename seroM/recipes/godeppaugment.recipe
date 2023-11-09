@@ -1,0 +1,30 @@
+{
+	"input" : [
+		{
+			"item" : "money",
+			"count" : 5000000
+		},
+		{
+			"item" : "diamond",
+			"count" : 666
+		},
+		{
+			"item" : "solariumstar",
+			"count" : 10000
+		},
+		{
+			"item" : "platinumbar",
+			"count" : 5000
+		},
+		{
+			"item" : "banana",
+			"count" : 51
+		}
+	],
+	"output" : {
+		"item" : "godeppaugment",
+		"count" : 1
+	},
+	"duration" : 1.0,
+	"groups"  : [ "plain" ]
+}

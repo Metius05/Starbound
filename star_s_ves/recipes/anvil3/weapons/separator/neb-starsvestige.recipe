@@ -1,0 +1,17 @@
+{
+  "input" : [
+    { "item" : "soluskatana", "count" : 1 },
+    { "item" : "violiumbroadsword", "count" : 1 },
+    { "item" : "rarebroadsword", "count" : 1 },
+    { "item" : "solariumstar", "count" : 15 },
+    { "item" : "refinedviolium", "count" : 13 },
+    { "item" : "durasteelbar", "count" : 12 },
+    { "item" : "wire", "count" : 12 },
+    { "item" : "battery", "count" : 4 },
+    { "item" : "stickofram", "count" : 3 },
+    { "item" : "money", "count" : 2500 },
+    { "item" : "essence", "count" : 1000 }
+  ],
+  "output" : { "item" : "neb-starsvestige", "count" : 1 },
+  "groups" : [ "craftingseparator", "weapons", "all" ]
+}
